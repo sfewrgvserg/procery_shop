@@ -99,26 +99,26 @@ const ListProducts = () => {
       </div>
       {showDetails && product && (
         <div className="h-screen w-screen fixed top-0">
-          <div className=" h-screen bg-gray-600/55 flex  flex-col items-center justify-center">
-            <div className="mx-auto bg-white rounded-2xl flex w-1/2 relative">
-              <div className="p-5  flex items-center">
+          <div className=" h-screen bg-gray-600/55 flex flex-col items-center justify-center">
+            <div className="mx-auto bg-white rounded-2xl pb-5 flex max-w-[50rem] relative max-lg:max-w-full max-lg:flex-col max-lg:items-center max-lg:text-center">
+              <div
+                onClick={() => {
+                  setShowDetails(false);
+                }}
+                className="absolute top-2 right-5 cursor-pointer border-gray-300 border-2 rounded-full shadow-2xl shadow-slate-800 max-lg:top-5 max-lg:right-16"
+              >
+                <IoIosClose size={35} />
+              </div>
+              <div className="p-5 flex items-center">
                 <Image
                   src={product.img}
-                  height={1300}
-                  width={1300}
+                  height={700}
+                  width={700}
                   alt={product.title}
-                  className="rounded-xl bg-slate-100 p-10"
+                  className="rounded-xl p-10 max-w-[15rem] max-lg:max-w-[15rem]"
                 />
               </div>
               <div className="flex flex-col justify-center space-y-3 mx-10 relative">
-                <div
-                  onClick={() => {
-                    setShowDetails(false);
-                  }}
-                  className="absolute top-3 right-0 cursor-pointer border-gray-300 border-2 rounded-full shadow-2xl shadow-slate-800"
-                >
-                  <IoIosClose size={35} />
-                </div>
                 <h2 className="text-3xl font-bold">{product.title}</h2>
                 <p>{product.desc}</p>
                 <h3 className="text-2xl font-semibold">${product.price}</h3>
@@ -126,8 +126,8 @@ const ListProducts = () => {
                   quantity {product.quantity}
                 </h3>
 
-                <div className="flex items-center ">
-                  <div className="flex items-center space-x-5 border-gray-400 rounded-md border-2 w-1/2">
+                <div className="flex items-center max-lg:flex-col">
+                  <div className="flex items-center w-[15rem] space-x-5 border-gray-400 rounded-md border-2 max-lg:w-[15rem]">
                     <button
                       onClick={handleClick2}
                       className="w-full font-bold py-2"
@@ -142,14 +142,17 @@ const ListProducts = () => {
                       +
                     </button>
                   </div>
-                  <p className="font-bold text-2xl pl-3"> = ${totalPrice} </p>
+                  <p className="font-bold text-2xl pl-3">
+                    {" "}
+                    <span className="max-lg:hidden">=</span> ${totalPrice}{" "}
+                  </p>
                 </div>
 
                 <button
                   onClick={() => {
                     handlePost();
                   }}
-                  className="bg-emerald-500 w-1/2 rounded-xl text-white font-bold text-lg py-5"
+                  className="bg-emerald-500 max-w-[15rem] rounded-xl text-white font-bold text-lg py-5 max-lg:flex max-lg:justify-center max-lg:max-w-full"
                 >
                   Add To Cart
                 </button>
