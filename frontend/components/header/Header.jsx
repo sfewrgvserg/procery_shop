@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import logo from "../../public/assets/image/filter/logo.png";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import axios from "axios";
 import { BiCategoryAlt } from "react-icons/bi";
 import { BsShop } from "react-icons/bs";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
-import { IoTrashBinOutline } from "react-icons/io5";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 const Header = () => {
@@ -90,7 +90,9 @@ const Header = () => {
             </span>
           </div>
           <div>
-            <FaRegCircleUser size={35} className="cursor-pointer" />
+            <Link href="/create-acount">
+              <FaRegCircleUser size={35} className="cursor-pointer" />
+            </Link>
           </div>
         </div>
 

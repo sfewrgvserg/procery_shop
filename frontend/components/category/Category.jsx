@@ -46,7 +46,10 @@ const Category = () => {
         </h2>
         <div className="grid grid-cols-7 gap-5 max-md:grid-cols-4 max-lg:grid-cols-5 max-sm:grid-cols-2">
           {lists.map((list) => (
-            <div className="bg-sky-200 h-[9rem] flex flex-col justify-center text-center rounded-md cursor-pointer duration-200 hover:bg-emerald-500 group">
+            <div
+              className="bg-sky-200 h-[9rem] flex flex-col justify-center text-center rounded-md cursor-pointer duration-200 hover:bg-emerald-500 group"
+              key={list.title}
+            >
               <div className="flex justify-center">
                 <Image
                   src={list.img}
